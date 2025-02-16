@@ -1,0 +1,8 @@
+### **8. Testes Automatizados com Node.js**
+**Título**: *Como Criar Testes Automatizados em Node.js*  
+**Descrição**: Como adicionar testes unitários e de integração ao seu projeto Node.js.  
+**Tópicos**:
+- Introdução a testes no Node.js
+- Instalando e configurando o Mocha e Chai
+- Escrevendo testes unitários e de integração
+- Testando rotas e lógica de negócios

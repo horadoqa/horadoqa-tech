@@ -1,0 +1,8 @@
+### **7. Validação e Tratamento de Erros**
+**Título**: *Validando Dados e Tratando Erros no Node.js*  
+**Descrição**: Como garantir que os dados recebidos estejam corretos e como tratar erros de forma eficaz.  
+**Tópicos**:
+- Usando pacotes como `express-validator`
+- Tratamento de erros no Express
+- Status codes e mensagens de erro adequadas
+- Validando dados de formulários e requisições

@@ -1,0 +1,8 @@
+### **2. Estrutura de um Projeto Node.js**
+**Título**: *Estrutura de Diretórios e Organização de um Projeto Node.js*  
+**Descrição**: Como organizar um projeto para garantir que ele seja escalável.  
+**Tópicos**:
+- Estrutura de arquivos recomendada
+- Uso do arquivo `.gitignore`
+- Como gerenciar dependências com `npm`
+- Instalar pacotes úteis (ex: Express, Nodemon)

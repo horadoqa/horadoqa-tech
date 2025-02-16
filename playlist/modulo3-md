@@ -1,0 +1,9 @@
+### **3. Trabalhando com o Express.js**
+**Título**: *Criando um Servidor com Express.js*  
+**Descrição**: Como usar o Express para criar APIs e servidores.  
+**Tópicos**:
+- O que é o Express?
+- Como configurar e criar rotas
+- Criando um servidor simples com Express
+- Diferença entre `GET`, `POST`, `PUT` e `DELETE`
+- Respostas HTTP no Express

@@ -1,0 +1,8 @@
+### **9. Publicando seu Projeto**
+**Título**: *Publicando e Implantando seu Projeto Node.js*  
+**Descrição**: Como colocar seu projeto em produção.  
+**Tópicos**:
+- Como usar o Heroku para deploy
+- Como usar o DigitalOcean ou AWS
+- Configuração do ambiente de produção (variáveis de ambiente)
+- Usando ferramentas como `PM2` para gerenciar o servidor em produção

@@ -1,0 +1,8 @@
+### **5. Conexão com Bancos de Dados**
+**Título**: *Conectando Node.js a Bancos de Dados (MongoDB ou MySQL)*  
+**Descrição**: Aprendendo como conectar o seu servidor Node.js a um banco de dados.  
+**Tópicos**:
+- Introdução ao MongoDB (ou MySQL)
+- Instalando o Mongoose (para MongoDB) ou MySQL
+- Conectando ao banco de dados
+- Criando e lendo documentos (ou tabelas)

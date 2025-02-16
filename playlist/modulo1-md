@@ -1,0 +1,311 @@
+### **1. Introdução ao Node.js e Preparação do Ambiente**
+**Título**: *Introdução ao Node.js e Configuração do Projeto*  
+**Descrição**: Apresentação do que é o Node.js, suas vantagens e como configurar o ambiente de desenvolvimento.  
+**Tópicos**:
+- O que é Node.js?
+- Como instalar o Node.js
+- Criando o primeiro projeto Node.js
+- Explicação do arquivo `package.json`
+- Como rodar o servidor básico com Node.js
+
+
+
+
+
+
+
+## Pré-requisitos
+
+Antes de começar o projeto, precisamos conhecer:
+
+- [Node.js](./docs/node/sobre.md)
+- [Express]()
+- [MongoDB](./docs/mongodb/sobre.md)
+
+
+Agora que já conhecemos o Node.js e o MongoDB vamos inicializar o projeto como o comando:
+
+```
+npm init
+```
+
+Que irá pedir as seguintes informações:
+
+```json
+package name: 
+version: 
+description: 
+entry point: 
+test command: 
+git repository: 
+keywords: 
+author: 
+license: 
+About to write to: package.json
+```
+
+Ou se vc quiser ignorar este passo:
+
+```
+npm init -y
+```
+
+Que irá criar um arquivo package.json padrão
+
+
+---
+
+## Próximos Passos: Instalação das dependências
+
+Agora que você já sabe para que serve e a importância do node.js, vamos para a [Instalação](install.md).
+
+
+
+
+
+## Instalação
+
+Siga os passos abaixo para configurar o projeto localmente:
+
+1. Clone este repositório:
+
+   ```bash
+   git clone https://github.com/horadoqa/horadoqa-tech.git
+   ```
+
+2. Navegue até o diretório do projeto:
+
+   ```bash
+   cd horadoqa-tech
+   ```
+
+3. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+4. Crie um arquivo `.env` na raiz do projeto e configure as variáveis de ambiente, por exemplo:
+
+   ```env
+   MONGO_URI=mongodb://localhost:27017/ecommerce
+   JWT_SECRET=seu-segredo-aqui
+   PORT=3000
+   ```
+
+   - `MONGO_URI`: URL de conexão com o MongoDB.
+   - `JWT_SECRET`: Chave secreta para geração de tokens JWT.
+   - `PORT`: Porta em que a aplicação vai rodar (opcional).
+
+5. Inicie o servidor:
+
+   ```bash
+   npm start
+   ```
+
+   O servidor estará rodando na porta configurada (por padrão, `3000`).
+
+## Endpoints da API
+
+### 1. Cadastro de Usuário
+
+**POST** `/api/users/register`
+
+- Corpo da requisição:
+
+  ```json
+  {
+    "name": "Nome do Usuário",
+    "email": "email@exemplo.com",
+    "password": "senha"
+  }
+  ```
+
+- Resposta:
+
+  ```json
+  {
+    "message": "Usuário criado com sucesso"
+  }
+  ```
+
+### 2. Login de Usuário
+
+**POST** `/api/users/login`
+
+- Corpo da requisição:
+
+  ```json
+  {
+    "email": "email@exemplo.com",
+    "password": "senha"
+  }
+  ```
+
+- Resposta:
+
+  ```json
+  {
+    "token": "jwt_token_aqui"
+  }
+  ```
+
+### 3. CRUD de Produtos
+
+#### 3.1 Criar Produto
+
+**POST** `/api/products`
+
+- Corpo da requisição:
+
+  ```json
+  {
+    "name": "Nome do Produto",
+    "description": "Descrição do produto",
+    "price": 100.00,
+    "category": "Categoria do Produto"
+  }
+  ```
+
+- Resposta:
+
+  ```json
+  {
+    "message": "Produto criado com sucesso"
+  }
+  ```
+
+#### 3.2 Obter Produtos
+
+**GET** `/api/products`
+
+- Resposta:
+
+  ```json
+  [
+    {
+      "_id": "produto_id",
+      "name": "Nome do Produto",
+      "description": "Descrição do produto",
+      "price": 100.00,
+      "category": "Categoria"
+    }
+  ]
+  ```
+
+#### 3.3 Atualizar Produto
+
+**PUT** `/api/products/:id`
+
+- Corpo da requisição:
+
+  ```json
+  {
+    "name": "Novo nome do produto",
+    "description": "Nova descrição",
+    "price": 120.00,
+    "category": "Nova categoria"
+  }
+  ```
+
+- Resposta:
+
+  ```json
+  {
+    "message": "Produto atualizado com sucesso"
+  }
+  ```
+
+#### 3.4 Deletar Produto
+
+**DELETE** `/api/products/:id`
+
+- Resposta:
+
+  ```json
+  {
+    "message": "Produto deletado com sucesso"
+  }
+  ```
+
+### 4. Carrinho de Compras
+
+#### 4.1 Adicionar Item ao Carrinho
+
+**POST** `/api/cart`
+
+- Corpo da requisição:
+
+  ```json
+  {
+    "productId": "produto_id",
+    "quantity": 1
+  }
+  ```
+
+- Resposta:
+
+  ```json
+  {
+    "message": "Produto adicionado ao carrinho"
+  }
+  ```
+
+#### 4.2 Obter Carrinho
+
+**GET** `/api/cart`
+
+- Resposta:
+
+  ```json
+  [
+    {
+      "productId": "produto_id",
+      "quantity": 2,
+      "totalPrice": 200.00
+    }
+  ]
+  ```
+
+### 5. Pedidos
+
+#### 5.1 Criar Pedido
+
+**POST** `/api/orders`
+
+- Corpo da requisição:
+
+  ```json
+  {
+    "cart": [
+      {
+        "productId": "produto_id",
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 100.00
+  }
+  ```
+
+- Resposta:
+
+  ```json
+  {
+    "message": "Pedido criado com sucesso",
+    "orderId": "pedido_id"
+  }
+  ```
+
+## Estrutura de Diretórios
+
+```
+/ecommerce-nodejs
+│
+├── /controllers         # Lógica de controle da API
+├── /models              # Definições de modelo (Usuário, Produto, etc.)
+├── /routes              # Definição das rotas
+├── /middleware          # Middlewares como autenticação
+├── /config              # Arquivo de configuração (ex.: conexão com banco)
+└── server.js            # Arquivo principal que inicia o servidor
+```
+

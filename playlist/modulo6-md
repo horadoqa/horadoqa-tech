@@ -1,0 +1,9 @@
+
+### **6. Autenticação de Usuários**
+**Título**: *Como Implementar Autenticação em um Projeto Node.js*  
+**Descrição**: Como criar um sistema básico de autenticação utilizando JWT ou sessões.  
+**Tópicos**:
+- O que são tokens JWT e como usá-los
+- Instalando pacotes de autenticação (ex: `jsonwebtoken`, `bcrypt`)
+- Criando rotas de login e registro de usuários
+- Protegendo rotas com middleware

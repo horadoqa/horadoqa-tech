@@ -1,0 +1,8 @@
+### **4. Gerenciando Dados com JSON**
+**Título**: *Trabalhando com Dados JSON em Node.js*  
+**Descrição**: Como enviar e receber dados em formato JSON com Node.js.  
+**Tópicos**:
+- O que é JSON e como usá-lo no Node.js
+- Recebendo dados no corpo da requisição (POST)
+- Enviando dados para o cliente
+- Utilizando o middleware `express.json()`
